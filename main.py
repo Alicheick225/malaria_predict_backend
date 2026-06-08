@@ -17,7 +17,7 @@ import tensorflow as tf  # noqa: E402,F401
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from routers import districts, health, predictions
+from routers import districts, health, model, predictions
 from services.model_service import model_service
 
 API_PREFIX = "/api/v1"
@@ -57,6 +57,7 @@ app.add_middleware(
 app.include_router(health.router)
 app.include_router(predictions.router)
 app.include_router(districts.router)
+app.include_router(model.router)
 
 
 @app.get("/", tags=["health"], summary="Racine de l'API")
