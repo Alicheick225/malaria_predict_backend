@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: malaria-predict-api
+    runtime: docker
+    plan: starter
+    region: frankfurt
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/v1/health
+    autoDeploy: true
