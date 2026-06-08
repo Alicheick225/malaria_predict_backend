@@ -40,9 +40,9 @@ SAVED_DIR = BASE_DIR / "saved_model"
 SAVED_DIR.mkdir(exist_ok=True)
 
 SEED = 42
-VAL_START = pd.Timestamp("2020-01-01")
-TEST_START = pd.Timestamp("2021-01-01")
-MODEL_VERSION = "1.0.0"
+VAL_START  = pd.Timestamp("2020-01-01")   # train: 2010-2019 | val: 2020 | test: 2021-2022
+TEST_START = pd.Timestamp("2021-01-01")   # données 2023-2024 dans la fenêtre d'inférence (post-dataset)
+MODEL_VERSION = "2.0.0"
 
 
 def build_sequences(df: pd.DataFrame, seq_len: int = SEQ_LEN):

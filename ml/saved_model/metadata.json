@@ -12,12 +12,12 @@
   ],
   "target": "incidence_rate_1k",
   "seq_len": 8,
-  "version": "1.0.0",
-  "trained_at": "2026-06-08 13:34:05",
+  "version": "2.0.0",
+  "trained_at": "2026-06-08 21:09:52",
   "test_metrics": {
-    "rmse": 32.1527,
-    "mae": 25.1198,
-    "r2": 0.7986
+    "rmse": 63.7012,
+    "mae": 56.6476,
+    "r2": 0.2671
   },
   "train_period": [
     "2010-09-01",
@@ -29,10 +29,10 @@
   ],
   "test_period": [
     "2021-01-01",
-    "2022-12-01"
+    "2024-12-01"
   ],
   "n_train": 3696,
   "n_val": 396,
-  "n_test": 792,
+  "n_test": 1584,
   "n_districts": 33
 }
