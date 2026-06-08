@@ -2,8 +2,19 @@ services:
   - type: web
     name: malaria-predict-api
     runtime: docker
-    plan: starter
+    plan: free
     region: frankfurt
     dockerfilePath: ./Dockerfile
     healthCheckPath: /api/v1/health
     autoDeploy: true
+    envVars:
+      # Limite les pools de threads de TensorFlow — réduit l'empreinte mémoire
+      # (critique sur le tier gratuit Render, 512 Mo de RAM partagée).
+      - key: TF_CPP_MIN_LOG_LEVEL
+        value: "3"
+      - key: TF_NUM_INTEROP_THREADS
+        value: "1"
+      - key: TF_NUM_INTRAOP_THREADS
+        value: "1"
+      - key: OMP_NUM_THREADS
+        value: "1"
